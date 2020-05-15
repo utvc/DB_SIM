@@ -1,12 +1,94 @@
 <html>
-
 <head>
-<title>我的第一个 HTML 页面</title>
+<title>魔兽世界8.3版本大秘境低保箱子开箱模拟</title>
 </head>
-
 <body>
-<p>body 元素的内容会显示在浏览器中。</p>
-<p>title 元素的内容会显示在浏览器的标题栏中。</p>
-</body>
+<form name="frm">
+<select name="s1" onChange="redirec(document.frm.s1.options.selectedIndex)">
+<option selected>请选择</option>
+<option value="1">战士</option>
+<option value="2">骑士</option>
+<option value="3">死亡骑士</option>
+<option value="4">猎人</option>
+<option value="5">萨满祭司</option>
+<option value="6">潜行者</option>
+<option value="7">恶魔猎手</option>
+<option value="8">武僧</option>
+<option value="9">德鲁伊</option>
+<option value="10">法师</option>
+<option value="11">牧师</option>
+<option value="12">术士</option>
+</select>
 
+<select name="s2">
+<option value="请选择" selected>请选择</option>
+</select>
+</form>
+<script language="javascript">
+//获取一级菜单长度
+var select1_len = document.frm.s1.options.length;
+var select2 = new Array(select1_len);
+//把一级菜单都设为数组
+for (i=0; i<select1_len; i++)
+{ select2[i] = new Array();}
+//定义基本选项
+select2[0][0] = new Option("请选择", " ");
+
+select2[1][0] = new Option("防战", " ");
+select2[1][1] = new Option("武器", " ");
+select2[1][2] = new Option("狂暴", " ");
+
+select2[2][0] = new Option("防骑", " ");
+select2[2][1] = new Option("惩戒", " ");
+select2[2][2] = new Option("奶骑", " ");
+
+select2[3][0] = new Option("鲜血", " ");
+select2[3][1] = new Option("冰霜", " ");
+select2[3][2] = new Option("邪恶", " ");
+
+select2[4][0] = new Option("射击", " ");
+select2[4][1] = new Option("兽王", " ");
+select2[4][2] = new Option("生存", " ");
+
+select2[5][0] = new Option("增强", " ");
+select2[5][1] = new Option("元素", " ");
+select2[5][2] = new Option("奶萨", " ");
+
+select2[6][0] = new Option("狂徒", " ");
+select2[6][1] = new Option("敏锐", " ");
+select2[6][2] = new Option("刺杀", " ");
+
+select2[7][0] = new Option("浩劫", " ");
+select2[7][1] = new Option("复仇", " ");
+
+select2[8][0] = new Option("酒仙", " ");
+select2[8][1] = new Option("踏风", " ");
+select2[8][2] = new Option("织雾", " ");
+
+select2[9][0] = new Option("守护", " ");
+select2[9][1] = new Option("野性", " ");
+select2[9][2] = new Option("平衡", " ");
+select2[9][3] = new Option("恢复", " ");
+
+select2[10][0] = new Option("火焰", " ");
+select2[10][1] = new Option("冰霜", " ");
+select2[10][2] = new Option("奥数", " ");
+
+select2[11][0] = new Option("神圣", " ");
+select2[11][1] = new Option("戒律", " ");
+select2[11][2] = new Option("暗影", " ");
+
+select2[12][0] = new Option("毁灭", " ");
+select2[12][1] = new Option("痛苦", " ");
+select2[12][2] = new Option("恶魔", " ");
+//联动函数
+function redirec(x)
+{
+var temp = document.frm.s2;
+for (i=0;i<select2[x].length;i++)
+{ temp.options[i]=new Option(select2[x][i].text,select2[x][i].value);}
+temp.options[0].selected=true;
+}
+</script>
+</body>
 </html>
